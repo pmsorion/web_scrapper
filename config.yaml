@@ -1,3 +1,11 @@
 job_site:
   empleosti:
     url: https://empleosti.com.mx/
+    queries:
+      homepage_job_company: '.enterprise a'
+      homepage_job_link: '.job-eti a'
+  
+  gob:
+
+  peaku:
+    url: https://peaku.co/

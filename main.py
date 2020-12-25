@@ -2,6 +2,8 @@ import argparse
 import logging
 logging.basicConfig(level=logging.INFO)
 
+import jobs_page_objects as jobspage
+
 from common import config
 
 logger = logging.getLogger(__name__)
@@ -11,6 +13,10 @@ def _jobs_scraper(job_site_uid):
     host = config()['job_site'][job_site_uid]['url']
 
     logging.info('Beginning scraper fro {}'.format(host))
+    homepage = jobspage.HomePage(job_site_uid, host)
+
+    for link in homepage.job_links:
+        print(link)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
